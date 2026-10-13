@@ -1,0 +1,11 @@
+# QuantPulse Crypto Analysis Engine Dependencies
+# Zero Telegram dependencies: Strictly quantitative and analytical libraries
+requests>=2.31.0
+pandas>=2.2.0
+numpy>=1.26.0
+pydantic>=2.6.0
+fastapi>=0.110.0
+uvicorn>=0.28.0
+pytest>=8.0.0
+python-dotenv>=1.0.1
+rich>=13.7.0

@@ -1,0 +1,6 @@
+{
+  "name": "QuantPulse Crypto - TradingView Analysis & Algorithmic Scanner",
+  "description": "Professional cryptocurrency market analysis platform with TradingView integration, multi-strategy quantitative engine, selective LONG/SHORT/NO TRADE signals, and backtesting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

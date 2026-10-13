@@ -1,0 +1,33 @@
+name: QuantPulse Scheduled Market Analysis
+
+on:
+  schedule:
+    # Run every 2 hours to scan the 9 supported crypto markets
+    - cron: '0 */2 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  market_analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r python_engine/requirements.txt
+
+      - name: Run Multi-Strategy Market Scanner
+        run: |
+          python -m python_engine.main --timeframe 1h
+
+      - name: Run Higher Timeframe Scanner (4H)
+        run: |
+          python -m python_engine.main --timeframe 4h
